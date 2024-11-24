@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #06090c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.top-bar {
+    display: flex;
+    align-items: top;
+
+}
+.top-bar img {
+    display: flex;
+    width: 150px;
+    height: auto;
+    align-items: start;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between 10px;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    margin-left: 7px;
+    padding: 3px;
+    /* Make the link white */
+}
+
+.nav-item a:hover {
+    color: #f39c12;
+    /* Change color on hover (optional) */
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: #34495e;
+}
+
+/* Dropdown content is hidden by default */
+.dropdown-content {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+    width: 150px;
+    background-color: #1c1f23;
+    transition: max-height 0.3s ease-out;
+    /* Smooth dropdown animation */
+    overflow: hidden;
+}
+
+/* Dropdown button styles */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover,
+.dropdown-btn.active {
+    background-color: #34495e;
+}
+
+/* Submenu items inside dropdown */
+.dropdown-content li {
+    padding: 10px 15px;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    text-decoration: underline;
+}
+
+/* When the dropdown is active */
+/* Arrow rotation when active */
+.dropdown-btn.active .dropdown-icon {
+    transform: rotate(180deg);
+    /* Rotate arrow down */
+    transition: transform 0.3s ease;
+}
+
+
+.nav-item:hover {
+    display: block;
+    /* Show submenu on hover */
+}
+
+.nav-item {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background-color: #34495e;
+}

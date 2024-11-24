@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff/Trainer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+        }
+
+        .sidebar-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+
+        .header-iframe {
+            width: 100%;
+            height: 7vh;
+            /* Adjust to the header height */
+            border: none;
+        }
+
+        .content-container {
+            margin: 10px;
+            padding: 20px;
+            height: 90vh;
+            background-color: rgba(229, 227, 227, 0.927);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2px;
+        }
+
+        .content-header h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #050000;
+            margin: 0;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-bar {
+            margin-top: 2px;
+            padding: 8px 12px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+
+        .content-header a {
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .content-header a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .form-container label {
+            font-size: 12px;
+            color: #080303;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-container input,.form-container textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="file"] {
+            padding: 5px;
+            font-size: 14px;
+            background-color: #fff;
+        }
+
+    
+        .form-container textarea {
+            resize: none;
+            height: 100px;
+            grid-column: span 4; /* Span 2 columns for the last row */
+        }
+        
+
+        .form-actions {
+            grid-column: span 4;
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-save {
+            background-color: #f5f5f5;
+            color: rgb(8, 6, 6);
+            border: 1px solid #ccc;
+        }
+
+        .btn-reset {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        .btn-reset:hover,
+        .btn-save:hover {
+            background-color: #f8943d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <iframe src="../components/sidebar.html" frameborder="0" class="sidebar-iframe"></iframe>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Include Header -->
+            <iframe src="../components/header.html" frameborder="0" class="header-iframe"></iframe>
+
+
+            <div class="content-container">
+                <!-- Header Section -->
+                <div class="content-header">
+                    <h4>Add Staff/Trainer</h4>
+
+                    <div class="search-container">
+                        <input type="text" id="staffSearch" placeholder="Search here" class="search-bar"
+                            oninput="filterStaff()" />
+                        <span class="material-icons search-icon">search</span>
+                    </div>
+
+                </div>
+                <hr><br>
+
+                <!-- Form Section -->
+                <div class="form-container">
+                    <div>
+                        <label for="photo">Photo</label>
+                        <input type="file" id="photo" name="photo">
+                    </div>
+                    <div>
+                        <label for="full-name">Staff Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter full name">
+                    </div>
+                    <div>
+                        <label for="profession">Profession</label>
+                        <input type="text" id="profession" name="profession" placeholder="Enter profession">
+                    </div>
+                    <div>
+                        <label for="contact">Contact No.</label>
+                        <input type="text" id="contact" name="contact" placeholder="Enter contact number">
+                    </div>
+                    <div>
+                        <label for="experience">Experience</label>
+                        <input type="text" id="experience" name="experience" placeholder="Enter experience">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    <div>
+                        <label for="dob">DOB</label>
+                        <input type="date" id="dob" name="dob">
+                    </div>
+                    <div>
+                        <label for="batch">Batch</label>
+                        <input type="text" id="batch" name="batch" placeholder="Enter batch">
+                    </div>
+                    <div>
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" placeholder="Enter address"></textarea>
+                    </div>
+                    <div>
+                        <label for="about-trainer">About Trainer</label>
+                        <textarea id="about-trainer" name="about-trainer"
+                            placeholder="Enter details about the trainer"></textarea>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-save">Save</button>
+                    <button type="reset" class="btn btn-reset">Reset</button>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

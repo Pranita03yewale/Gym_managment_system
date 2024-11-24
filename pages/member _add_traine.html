@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Add Trainee</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        /* Custom font size adjustments */
+        html {
+            font-size: 13px;
+            /* Reduced base font size */
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="flex">
+     <!-- Sidebar Section -->
+     <div class="w-64 bg-black-900">
+      <iframe class="w-full h-screen border-none" src="../components/sidebar.html">
+      </iframe>
+     </div>
+     <!-- Main Content -->
+     <div class="flex-1 flex flex-col">
+      <!-- Include Header -->
+      <iframe class="w-full h-16 border-none" src="../components/header.html">
+      </iframe>
+      <div class="m-2 p-4 bg-white rounded-lg shadow-lg">
+       <!-- Header Section -->
+       <div class="flex justify-between items-center mb-4">
+        <h4 class="text-lg font-semibold text-gray-700">
+         Add Trainee
+        </h4>
+       </div>
+       <hr class="mb-6"/>
+       <!-- Form Section -->
+       <div class="bg-white p-4 mt-4 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">
+         Add Trainee
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Name
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Email ID
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" type="email"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           DOB
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" placeholder="dd-MMM-yyyy" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Contact Number
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Age
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" placeholder="##" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Address
+          </label>
+          <textarea class="w-2/3 p-2 border border-gray-300 rounded ml-2">
+          </textarea>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Membership
+          </label>
+          <select class="w-2/3 p-2 border border-gray-300 rounded ml-2">
+           <option>
+            -Select Membership-
+           </option>
+          </select>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Photo
+          </label>
+          <div class="w-2/3 border border-dashed border-gray-300 p-4 rounded text-center ml-2">
+           <span>
+            Upload or Drag here
+           </span>
+          </div>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Next Payment Schedule Date
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" placeholder="dd-MMM-yyyy" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Join Date
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" placeholder="dd-MMM-yyyy" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Personal Trainer
+          </label>
+          <select class="w-2/3 p-2 border border-gray-300 rounded ml-2">
+           <option>
+            -Select Trainer-
+           </option>
+          </select>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           End Date
+          </label>
+          <input class="w-2/3 p-2 border border-gray-300 rounded ml-2" placeholder="dd-MMM-yyyy" type="text"/>
+         </div>
+         <div class="flex items-center mb-2">
+          <label class="w-1/3 text-sm">
+           Classes
+          </label>
+          <select class="w-2/3 p-2 border border-gray-300 rounded ml-2">
+           <option>
+            -Select Class-
+           </option>
+          </select>
+         </div>
+        </div>
+        <!-- Buttons -->
+        <div class="flex mt-4 gap-4">
+         <button class="px-6 py-2 bg-orange-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" type="button">
+          Save
+         </button>
+         <button class="px-6 py-2 bg-gray-300 text-white text-sm font-medium rounded-md shadow-sm hover:bg-gray-200 focus:ring-2 focus:ring-gray-300 focus:outline-none" type="reset">
+          Reset
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </body>
+
+</html>

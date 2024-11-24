@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Staff Details</title>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex">
+        <!-- Sidebar Section -->
+        <div class="w-52">
+            <iframe src="../components/sidebar.html" frameborder="0" class="w-full h-screen border-0"></iframe>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1">
+            <!-- Include Header -->
+            <iframe src="../components/header.html" frameborder="0" class="w-full border-0 h-15"></iframe>
+
+            <div class="mt-5 mx-5 p-5 bg-white rounded-lg shadow-md max-w-4xl">
+                <!-- Header -->
+                <div class="text-lg font-bold mb-5 text-black">View Details</div>
+                <hr class="mb-5">
+
+                <!-- Details Section -->
+                <div class="flex gap-5">
+                    <!-- Left Section -->
+                    <div class="flex-1">
+                        <h4 class="text-gray-600 mb-3">Personal Details</h4>
+
+                        <!-- Profile Section -->
+                        <div class="flex items-center mb-5">
+                            <img src="../assets/images/staff_girl.jpg" alt="Profile Picture" 
+                                class="w-24 h-24 rounded-full border-2 border-blue-500 object-cover">
+                            <div class="ml-5">
+                                <h2 class="text-lg font-semibold text-gray-800">Staff Full Name</h2>
+                                <p class="text-sm text-gray-600">Yoga</p>
+                            </div>
+                        </div>
+
+                        <!-- About Section -->
+                        <div class="mb-5">
+                            <h3 class="text-sm font-bold text-gray-800 border-b pb-1 mb-3">About</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                She is a certified yoga instructor with over 2 years of experience teaching a variety of
+                                yoga styles, including Vinyasa, Hatha, and Yin yoga. She specializes in creating inclusive,
+                                beginner-friendly classes while also offering advanced poses for seasoned practitioners.
+                                Her approach combines mindfulness, breath control, and strength-building techniques.
+                            </p>
+                        </div>
+
+                        <!-- Date of Birth Section -->
+                        <div>
+                            <h3 class="text-sm font-bold text-gray-800 border-b pb-1 mb-3">Date of Birth</h3>
+                            <p class="text-sm text-gray-600">September 24, 1995</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Section -->
+                    <div class="flex-1">
+                        <h3 class="text-sm font-bold text-gray-800 border-b pb-1 mb-3">Contact Details</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-bold text-gray-800">Email:</label>
+                                <p class="text-sm text-gray-600">abc@gmail.com</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold text-gray-800">Contact No.:</label>
+                                <p class="text-sm text-gray-600">1234567890</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-bold text-gray-800">Address:</label>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    123 Harmony Lane, Suite 48<br>
+                                    Melodyville, State 56789<br>
+                                    Country
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

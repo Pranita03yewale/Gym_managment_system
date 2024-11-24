@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Membership</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        /* Custom font size adjustments */
+        html {
+            font-size: 13px;
+            /* Reduced base font size */
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="flex">
+
+        <!-- Sidebar Section -->
+        <div class="w-64 bg-gray-900">
+            <iframe src="../components/sidebar.html" class="w-full h-screen border-none"></iframe>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Include Header -->
+            <iframe src="../components/header.html" class="w-full h-16 border-none"></iframe>
+
+            <div class="m-6 p-6 bg-white rounded-lg shadow-lg">
+                <!-- Header Section -->
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="text-lg font-semibold text-gray-700">Add Membership</h4>
+
+                    <div class="relative">
+                        <input type="text" id="staffSearch" placeholder="Search here"
+                            class="pl-4 pr-10 py-2 w-64 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span class="material-icons absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-400 cursor-pointer">
+                            search
+                        </span>
+                    </div>
+                </div>
+                <hr class="mb-6">
+
+                <!-- Form Section -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-600">Membership Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter membership name"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="amount" class="block text-sm font-medium text-gray-600">Amount</label>
+                        <input type="text" id="amount" name="amount" placeholder="Enter amount"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="membership_period" class="block text-sm font-medium text-gray-600">Membership Period</label>
+                        <input type="text" id="membership_period" name="membership_period"
+                            placeholder="Enter membership period"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="installment_period" class="block text-sm font-medium text-gray-600">Installment Period</label>
+                        <input type="text" id="installment_period" name="installment_period"
+                            placeholder="Enter installment period"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="description" class="block text-sm font-medium text-gray-600">Description</label>
+                        <textarea id="description" name="description" placeholder="Enter description"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 h-28 resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex mt-6 gap-4">
+                    <button type="button"
+                        class="px-6 py-2 bg-orange-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        Save
+                    </button>
+                    <button type="reset"
+                        class="px-6 py-2 bg-gray-300 text-white text-sm font-medium rounded-md shadow-sm hover:bg-gray-200 focus:ring-2 focus:ring-gray-300 focus:outline-none">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

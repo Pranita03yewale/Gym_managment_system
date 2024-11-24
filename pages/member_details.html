@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member <Details></Details></title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 205px;
+    }
+
+    .sidebar-iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+
+    .header-iframe {
+      width: 100%;
+      height: 7vh;
+      /* Adjust to the header height */
+      border: none;
+    }
+
+.staff-list {
+  max-width: 100%;
+  margin: 10px;
+  border: 2px black;
+  border-radius: 8px;
+  background-color: rgb(241, 241, 241);
+}
+
+
+
+.search-and-action {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-bar {
+  margin-top: 20px;
+  padding: 8px 12px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.add-btn {
+  display: flex;
+  margin-top: 20px;
+  margin-right: 20px;
+  height: 25px;
+  font-size: 14px;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn .material-icons {
+  margin-right: 5px;
+}
+
+.staff-table {
+  width: 100%;
+  border-radius: 15px;
+  border-collapse: collapse;
+}
+
+.staff-table th,
+.staff-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.staff-table th {
+  background-color: #e0dddd;
+}
+
+.staff-table img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.details-link {
+  color: rgb(8, 8, 11);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.details-link:hover{
+  color: #470bf9;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+  margin: 0 5px;
+}
+.edit-icon{
+  color: #007bff;
+}
+
+.delete-icon {
+  color: red;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+      <iframe src="../components/sidebar.html" frameborder="0" class="sidebar-iframe"></iframe>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Include Header -->
+      <iframe src="../components/header.html" frameborder="0" class="header-iframe"></iframe>
+
+      <div class="staff-list">
+       
+        
+    
+        <!-- Staff Table -->
+        <table class="staff-table" id="staffTable">
+          <thead>
+            <div class="search-and-action">
+               <!-- Search and Add Staff Section -->
+              <h4>Member Details</h4>
+              <!-- Search Bar -->
+              <div class="search-container">
+                <input
+                  type="text"
+                  id="staffSearch"
+                  placeholder="Search here"
+                  class="search-bar"
+                  oninput="filterStaff()"
+                />
+                <span class="material-icons search-icon">search</span>
+              </div>
+    
+            </div>
+            <tr>
+              <th>Photo</th>
+              <th>Member Name</th>
+              <th>Contact No.</th>
+              <th>Age</th>
+              <th>join Date</th>
+              <th>End Date</th>
+              <th>Membership</th>
+              <th>Email Id</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../assets/images/staff_boy.png" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_girl.jpg" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_boy.png" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_girl.jpg" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_boy.png" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_girl.jpg" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_boy.png" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_girl.jpg" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><img src="../assets/images/staff_boy.png" alt="Staff"></td>
+              <td>Member name</td>
+              <td>1234567890</td>
+              <td>22</td>
+              <td>01/09/2024</td>
+              <td>30/09/2024</td>
+              <td>Basic Membership</td>
+              <td>abc@example.com</td>
+              <td>
+                <span class="material-icons edit-icon">edit</span>
+                <span class="material-icons delete-icon" onclick="deleteRow(this)">delete</span>
+              </td>
+            </tr>
+
+
+            <!-- Add rows dynamically here -->
+          </tbody>
+        </table>
+      </div>
+    </body>
+    </html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        /* Custom font size adjustments */
+        html {
+            font-size: 14px;
+            /* Adjusted for better readability */
+        }
+
+        .table-content th,
+        .table-content td {
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            font-size: 0.9rem;
+        }
+
+        iframe {
+            background-color: #f9f9f9;
+            /* To match background */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="flex">
+        <!-- Sidebar Section -->
+        <div class="w-64 bg-black-900">
+            <iframe src="../components/sidebar.html" class="w-full h-screen border-none"></iframe>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Include Header -->
+            <iframe src="../components/header.html" class="w-full h-14 border-none"></iframe>
+
+            <!-- Content Section -->
+            <div class="p-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <!-- Header Section -->
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-lg font-semibold text-gray-700">Attendance</h4>
+
+                        <div class="relative">
+                            <input type="text" id="classSearch" placeholder="Search name"
+                                class="pl-4 pr-10 py-2 w-72 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <span
+                                class="material-icons absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-400 cursor-pointer">
+                                search
+                            </span>
+                        </div>
+
+                        <button type="button"
+                            class="px-6 py-3 flex gap-4 bg-gray-300 text-black rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <svg width="18" height="12" viewBox="0 0 23 17" fill="none " 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 10.2H2.55556V6.8H0V10.2ZM0 17H2.55556V13.6H0V17ZM0 3.4H2.55556V0H0V3.4ZM5.11111 10.2H23V6.8H5.11111V10.2ZM5.11111 17H23V13.6H5.11111V17ZM5.11111 0V3.4H23V0H5.11111ZM0 10.2H2.55556V6.8H0V10.2ZM0 17H2.55556V13.6H0V17ZM0 3.4H2.55556V0H0V3.4ZM5.11111 10.2H23V6.8H5.11111V10.2ZM5.11111 17H23V13.6H5.11111V17ZM5.11111 0V3.4H23V0H5.11111Z"
+                                    fill="#343434" />
+                            </svg>
+                            Class list
+                        </button>
+                    </div>
+                    <hr class="mb-6">
+
+                    <!-- Add New Class Form -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-4">
+                            <input type="text" placeholder="dd-MMM-yyyy"
+                                class="form-input px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+
+                            <select
+                                class="form-input px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option>Select Class</option>
+                                <option>Basic Yoga</option>
+                                <option>Yoga</option>
+                                <option>Zumba</option>
+                                <option>Aerobics</option>
+                                <option>Meditation</option>
+                                <option>Strength Training</option>
+                                <option>CrossFit</option>
+                            </select>
+
+                            <select
+                                class="form-input px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="" disabled selected>Start Time</option>
+                                <option value="06:00 AM">06:00 AM</option>
+                                <option value="07:00 AM">07:00 AM</option>
+                                <option value="08:00 AM">08:00 AM</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                            </select>
+
+                            <select
+                                class="form-input px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="" disabled selected>End Time</option>
+                                <option value="07:00 AM">07:00 AM</option>
+                                <option value="08:00 AM">08:00 AM</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                            </select>
+
+                            <button type="button"
+                                class="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                Take Attendance
+                            </button>
+                        </div>
+                    </div>
+                    <hr><br>
+
+                    <!-- Attendance Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-68 border-collapse border border-gray-200 text-left">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600">
+                                    <th class="px-4 py-2 border border-gray-200">Photo</th>
+                                    <th class="px-4 py-2 border border-gray-200">Name</th>
+                                    <th class="px-4 py-2 border border-gray-200">Present</th>
+                                    <th class="px-4 py-2 border border-gray-200">Absent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_boy.png" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_girl.jpg" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_boy.png" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_girl.jpg" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_boy.png" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance1" class="form-radio">
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <img src="../assets/images/staff_girl.jpg" alt="profile"
+                                            class="rounded-full w-10 h-10">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">Staff Full Name</td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-200">
+                                        <input type="radio" name="attendance2" class="form-radio">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
